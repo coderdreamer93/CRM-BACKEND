@@ -34,6 +34,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoute");
+const crmRoutes = require("./routes/leadAndContactRoutes")
 // const otpRoutes = require("./routes/otpRoutes"); // ✅ Import OTP Routes
 
 
@@ -58,7 +59,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 // app.use("/api/otp", otpRoutes); // ✅ New OTP Routes
-
+app.use("/api/lead", crmRoutes)
 // port
 const PORT = process.env.PORT || 8080;
 
