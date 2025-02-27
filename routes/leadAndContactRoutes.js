@@ -16,5 +16,7 @@ router.get("/contacts", contactController.getContacts);
 router.post("/leads", leadController.createLead);
 // Sare leads retrieve karne ka route
 router.get("/leads", leadController.getLeads);
-
+router.get("/leads/:id", leadController.getLeadById); // Get Single Lead
+router.put("/leads/:id", leadController.updateLead); // Update Lead
+router.delete("/leads/:id", leadController.deleteLead); // Delete Lead
 module.exports = router;
