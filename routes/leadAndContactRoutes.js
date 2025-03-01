@@ -4,12 +4,12 @@ const router = express.Router();
 // Controllers import karen
 const contactController = require("../controller/ContactManagementController");
 const leadController = require("../controller/LeadManagementController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // ----- Contacts Routes -----
-// Naya contact create karne ka route
-router.post("/contacts", contactController.createContact);
+router.post("/contacts", authMiddleware, contactController.createContact);
 // Sare contacts retrieve karne ka route
-router.get("/contacts", contactController.getContacts);
+router.get("/contacts", authMiddleware, contactController.getContacts);
 
 // ----- Leads Routes -----
 // Naya lead create karne ka route
